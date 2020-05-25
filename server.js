@@ -1,5 +1,5 @@
 const http = require('http')
-const fs = requre('fs')
+const fs = require('fs')
 const port = 8080
 
 const server = http.createServer(function(req, res){
