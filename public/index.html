@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>When Life Happens...</title>
+  <meta name="description" content="Simple starter javascript page for experimentation">
+  <meta name="author" content="Ian Harvey" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Abel|Aclonica|Actor|Advent Pro|Alegreya|Alegreya Sans SC|Allan|Allerta Stencil|Dekko|Didact Gothic|Gruppo|Kalam|Merienda|Nova Flat|" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body id="body1">
+
+<!-- particles.js container -->
+<div id="particles-js">
+  <div class="center">
+      <p id="text1" class="txt"></p>
+  </div>
+  <div style="position: absolute; left: 50%; bottom:5%; margin-top: 90%;">
+    <div style="position: relative; left: -50%;">
+      <input id="button1" class="btn" type="button" onclick="refresh()" value="Refresh"/>
+    </div>
+  </div>
+</div>
+
+<!-- scripts -->
+<script src="particles.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+  function makeRandomColor(){
+      var c = '';
+      while (c.length < 6) {
+        c += (Math.random()).toString(16).substr(-6).substr(-1)
+      }
+      return '#'+c;
+    }
+
+    function refresh(){
+      var fonts = ['Abel','Aclonica','Actor','Advent_Pro','Alegreya','Alegreya_Sans_SC','Allan','Allerta_Stencil','Dekko','Didact_Gothic','Gruppo','Kalam','Merienda','Nova_Flat','Impact','Palatino_Linotype','Tahoma','Century_Gothic','Lucida_Sans_Unicode','Arial_Black','Times_New_Roman','Arial_Narrow','Verdana','Copperplate_Gothic_Light','Lucida_Console','Gill_Sans','Trebuchet_MS','Courier New','Arial','Georgia'];
+      var rand = fonts[Math.floor(Math.random() * fonts.length)];
+      console.log(rand);
+
+      var bodyElement = document.getElementById("body1");
+      bodyElement.className = rand;
+
+      var str = "Dawg Shit";
+      var size = Math.floor(Math.random() * 200 + 20);
+      bodyElement.style.fontSize = size + "px";
+      var color = makeRandomColor();
+      var result = str.fontcolor(color);
+      console.log(size + "px")
+      document.getElementById("text1").innerHTML = result;
+
+      document.getElementById("button1").style.color=color;
+      console.log(color)
+    }
+
+    refresh();
+</script>
+
+</body>
+</html>
