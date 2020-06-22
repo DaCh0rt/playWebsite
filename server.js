@@ -1,5 +1,5 @@
 var static = require('node-static');
-var port = 8000
+var port = 8002
  
 //
 // Create a node-static server instance to serve the './public' folder
