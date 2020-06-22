@@ -1,2 +1,2 @@
-# testWebsite
-for my dawgshit website
+# playWebsite
+sandbox to experiment with JavaScript
